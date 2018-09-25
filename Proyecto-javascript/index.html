@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>CrediFacil</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="script.js"></script>
+	</head>
+    <header>
+        <img src="logo.png" id="logo">
+    </header>
+	<body>
+        <div id="inicio">
+            <div id="textotitulo">
+                <h2>Bienvenido a CrediFácil</h2>
+                <p id="textintro">Solicite sus prestamos personales, de vivienda o vehículo con los siguentes beneficios:</p>
+                <ul>
+                    <li>Cómodas Tasas de Interés.</li>
+                    <li>Diferentes plazos de pago.</li>
+                    <li>Bajas cuotas.</li>
+                </ul>
+                <p id="textintro">Consulte por nuestros diferentes créditos.</p>
+            </div>
+            <div id="formularios">
+            <div id="datospersonales">
+                <h2>Datos Personales</h2>
+                <input id="nombre" type="text" name="nombre" placeholder="Nombre Completo" required autofocus>
+                <p class="espacio"></p>
+    
+                <input id="cedula" type="text" name="cedula" placeholder="Numero de Cedula" pattern="[0-9]{9}"required>
+                <p class="espacio"></p>
+                
+                <input id="telefono" type="tel" name="telefono" placeholder="Teléfono" title="Digite solamente números" pattern="[0-9]{8}" required>
+                <p class="espacio"></p>
+                
+                <input id="correo" type="email" name="correo" placeholder="correo" required>
+               <p class="espacio"></p>
+                
+                <input type="date" id="fecha" placeholder="Fecha de nacimiento">
+                <p class="espacio"></p>
+               
+                <input id="sucursal" list="ubicacion" name="sucursal" required placeholder="Sucursal">
+                <datalist id="ubicacion">
+                                    <option value="Multiplaza Escazu"> </option>
+                                    <option value="Mall San Pedro"></option>
+                                    <option value="City Mall"></option>
+                </datalist>
+                <p class="espacio"></p>
+                <p id="aviso" style="display: none">Por favor, rellene todos los espacios.</p>
+                <button onclick="funcion()"> Guardar </button>
+
+
+
+            </div>
+            <div id="calprestamos" style="display: none">
+                <h2>Calculadora de prestamos</h2>
+                <input id="tipo" list="tipos" name="tipo" required placeholder="Tipo de prestamo">
+                <datalist id="tipos">
+                        <option value="Personal"> </option>
+                        <option value="Vivienda"></option>
+                        <option value="Vehiculo"></option>
+                </datalist>
+                <p class="espacio"></p>
+                <input id="moneda" list="monedas" name="moneda" required placeholder="Moneda">
+                <datalist id="monedas">
+                        <option value="Colones"></option>
+                </datalist>
+                <p class="espacio"></p>
+                <input id="monto" type="text" name="monto" placeholder="Monto" value="" required>
+                <p class="espacio"></p>
+                <input id="plazo" type="text" name="plazo" placeholder="Plazo" value="" required>
+                <p class="espacio"></p>
+                <input id="tasa" type="text" name="tasa" placeholder="Tasa de interes" disabled required>
+                <p class="espacio"></p>
+                <input id="cuota" type="text" name="cuota" placeholder="Cuota Estimada" disabled>
+                <p class="espacio"></p>
+                <button onclick="resumen()">Resumen</button>
+                 <button onclick="calcular()" id="botoncal">Calcular</button>
+            </div>
+        </div>
+    </div>
+             <div id="resumen" style="display: none">
+                <h2>Resumen</h2>
+                <h3>Datos personales</h3>
+                <p class="espacio"></p>
+                <label>Nombre Completo</label>
+                <input id="rnom" type="text" disabled>
+                <p class="espacio"></p>
+                <label>Numero de cedula</label>
+                <input id="rced" type="text" disabled>
+                <p class="espacio"></p>
+                <label>Numero de telefono</label>
+                <input id="rtel" type="text" disabled>
+                <p class="espacio"></p>
+                <label>Correo electronico</label>
+                <input id="rcor" type="text" disabled>
+                <p class="espacio"></p>
+                <label>Edad</label>
+                <input id="reda" type="text" disabled>
+                <p class="espacio"></p>
+                <label>Sucursal</label>
+                <input id="rsuc" type="text" disabled>
+                <p class="espacio"></p>
+                <h3>Informacion del credito</h3>
+                <p class="espacio"></p>
+                <label>Monto Solicitado</label>
+                <input id="rmon" type="text" disabled>
+                <p class="espacio"></p>
+                <label>Plazo del credito</label>
+                <input id="rpla" type="text" disabled>
+                <p class="espacio"></p>
+                <label>Tasa de interes</label>
+                <input id="rtas" type="text" disabled>
+                <p class="espacio"></p>
+                <label>Cuota mensual</label>
+                <input id="rcuo" type="text" disabled>
+                <p class="espacio"></p>
+                <button onclick="solicitar()">Solicitar préstamo</button>
+                </div>
+        <div id="mensajefinal">
+            <h1>Su Prestamo ha sido solicitado</h1>
+            <p>Nos comunicaremos con usted en un momento</p>
+            <button onclick="reload()">Volver a Inicio</button>
+        </div>
+            
+	</body>
+    <footer>
+        <p>Desarrollado y Diseñado por Jeremy Monge Solís </p>
+    </footer>
+</html>
